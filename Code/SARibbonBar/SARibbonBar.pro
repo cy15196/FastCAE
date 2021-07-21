@@ -13,18 +13,18 @@ win32{
   INCLUDEPATH	+=  ./ \
                     ../ \
 
-  Release:DESTDIR         = ../../output/bin 
-  Release:MOC_DIR         = ./release/moc 
-  Release:RCC_DIR         = ./release/rcc
-  Release:UI_DIR          = ./release/qui
-  Release:OBJECTS_DIR     = ./release/obj
+  CONFIG(release,debug|release):DESTDIR         = ../../output/bin 
+  CONFIG(release,debug|release):MOC_DIR         = ./release/moc 
+  CONFIG(release,debug|release):RCC_DIR         = ./release/rcc
+  CONFIG(release,debug|release):UI_DIR          = ./release/qui
+  CONFIG(release,debug|release):OBJECTS_DIR     = ./release/obj
 	
-  Debug:CONFIG	    	+=  console
-  Debug:DESTDIR         = ../../output/bin_d 
-  Debug:MOC_DIR         = ./debug/moc 
-  Debug:RCC_DIR         = ./debug/rcc 
-  Debug:UI_DIR          = ./debug/qui 
-  Debug:OBJECTS_DIR     = ./debug/obj 
+  CONFIG(debug,debug|release):	CONFIG  +=  console
+  CONFIG(debug,debug|release):DESTDIR         = ../../output/bin_d 
+  CONFIG(debug,debug|release):MOC_DIR         = ./debug/moc 
+  CONFIG(debug,debug|release):RCC_DIR         = ./debug/rcc 
+  CONFIG(debug,debug|release):UI_DIR          = ./debug/qui 
+  CONFIG(debug,debug|release):OBJECTS_DIR     = ./debug/obj 
 	
   message("Windows SARibbonBar build")                                            
 }
