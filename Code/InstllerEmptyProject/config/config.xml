@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Installer>
+    <Name>FastCAE</Name>
+    <Version>1.0.0</Version>
+    <Title>FastCAE-ofcc 1.0.0</Title>
+    <Publisher>cyy</Publisher>
+    <!-- Directory name is used in component.xml -->
+    <StartMenuDir>Cyy</StartMenuDir>
+    <TargetDir>@ApplicationsDir@/Cyy/FastCAE-ofcc</TargetDir>
+    <RemoteRepositories>
+        <Repository>
+            <Enabled>1</Enabled>
+            <DisplayName>cyy repository</DisplayName>
+            <Url>https://www.cyy.cn/download/QtIFWReposity/FastCAE-ofcc/</Url>
+        </Repository>
+    </RemoteRepositories>
+</Installer>

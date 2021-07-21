@@ -45,6 +45,8 @@ SUBDIRS += $$PWD/License/License.pro \
 
 SUBDIRS += $$PWD/PluginMeshDataExchange/meshDataExchangePlugin.pro \
 		   $$PWD/PluginCustomizer/pluginCustomizer.pro \
+
+SUBDIRS += InstllerEmptyProject
 		   
 #other Plugins 
 
