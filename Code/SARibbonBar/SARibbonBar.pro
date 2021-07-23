@@ -1,5 +1,5 @@
 TEMPLATE     =  lib
-CONFIG		 += debug  c++11 
+CONFIG		 +=  c++11
 CONFIG		 += qt
 TARGET 		 =  SARibbonBar
 QT      	 += core gui widgets

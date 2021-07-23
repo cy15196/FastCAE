@@ -8,10 +8,13 @@ INPUT = $$PWD/config/config.xml $$OUT_PWD/packages
 makeInstaller.input = INPUT
 makeInstaller.output = $$INSTALLER
 
+
+CONFIG(debug,debug|release){
+
 #qt
 makeInstaller.commands += $$QT_BIN_DIR\windeployqt.exe --quick --quickwidgets --printsupport --webview --webengine --webenginewidgets --xml --network $$PWD/../../output/bin_d/FastCAE.exe &
 
-CONFIG(debug,debug|release){
+
 #vtk quazip occ python gmesh
 makeInstaller.commands += xcopy /y/d/s/i $$replace(PWD,/,\\)\..\..\vtk\bind\*.* $$replace(PWD,/,\\)\..\..\output\bin_d &
 makeInstaller.commands += xcopy /y/d/s/i $$replace(PWD,/,\\)\..\..\quazip\libd\*.* $$replace(PWD,/,\\)\..\..\output\bin_d &
@@ -29,6 +32,11 @@ makeInstaller.commands += xcopy /y/d/s/i $$QT_BIN_DIR\QtWebEngineProcess.exe $$r
 makeInstaller.commands += xcopy /y/d/s/i $$QT_BIN_DIR\..\translations\qtwebengine_locales $$replace(PWD,/,\\)\..\..\output\bin\translations\qtwebengine_locales &
 makeInstaller.commands += xcopy /y/d/s/i $$QT_BIN_DIR\..\resources $$replace(PWD,/,\\)\..\..\output\bin\resources &
 }else{
+
+#qt
+makeInstaller.commands += $$QT_BIN_DIR\windeployqt.exe --quick --quickwidgets --printsupport --webview --webengine --webenginewidgets --xml --network $$PWD/../../output/bin/FastCAE.exe &
+
+
 makeInstaller.commands += xcopy /y/d/s/i $$replace(PWD,/,\\)\..\..\vtk\bin\*.* $$replace(PWD,/,\\)\..\..\output\bin &
 makeInstaller.commands += xcopy /y/d/s/i $$replace(PWD,/,\\)\..\..\quazip\lib\*.* $$replace(PWD,/,\\)\..\..\output\bin &
 makeInstaller.commands += xcopy /y/d/s/i $$replace(PWD,/,\\)\..\..\OCC\win64\vc14\bin\*.* $$replace(PWD,/,\\)\..\..\output\bin &
